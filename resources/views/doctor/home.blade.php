@@ -15,6 +15,12 @@
                     @endif
 
                     You are logged in as a Doctor!
+                    <br>
+                    Hi {{ Auth::user()->name }}
+                    <br>
+                    Email: {{ Auth::user()->email }}
+                    <br>
+                     {{-- <a href="{{ route('admin.books.index') }}">View Books </a> --}}
                 </div>
             </div>
         </div>
