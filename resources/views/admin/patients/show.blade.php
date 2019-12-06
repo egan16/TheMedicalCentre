@@ -4,10 +4,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h1>Patient</h1>
+            <h1>Patient details</h1>
             <div class="card">
                 <div class="card-header">
-                    Patient: {{ $patient->user->name }}
+                    {{ $patient->user->name }}
                 </div>
                 <div class="card-body">
                     <table class="table table hover">
@@ -53,8 +53,10 @@
             </div>
         </div>
     </div>
+    <br>
     <h1>{{ $patient->user->name }}'s Visits</h1>
     @foreach ($visits as $visit)
+    <br>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="card">

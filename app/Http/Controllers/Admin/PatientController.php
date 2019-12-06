@@ -137,7 +137,7 @@ class PatientController extends Controller
 
         $request->validate([
           'name' => 'required|max:191',
-          'email' => 'required|max:191|unique:users,email' . $patient->user->id,
+          'email' => 'required|max:191|unique:users,email,' . $patient->user->id,
           'password' => 'required',
           'address' => 'required|max:191',
           'phone' => 'required|max:13',
@@ -147,21 +147,16 @@ class PatientController extends Controller
 
         ]);
 
-        $user = new User();
+        $patient->user->name = $request->input('name');
+        $patient->user->email = $request->input('email');
+        $patient->user->password = $request->input('password');
+        $patient->user->address = $request->input('address');
+        $patient->user->phone = $request->input('phone');
 
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->password = $request->input('password');
-        $user->address = $request->input('address');
-        $user->phone = $request->input('phone');
-
-        $user->save();
-
-        $patient = new Patient();
+        $patient->user->save();
 
         $patient->is_insured = $request->input('is_insured');
         $patient->insurance_policy_no = $request->input('insurance_policy_no');
-        $patient->user_id = $user->id;
         $patient->insurance_id = $request->input('insurance_id');
 
         $patient->save();

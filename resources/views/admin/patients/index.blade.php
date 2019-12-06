@@ -17,7 +17,6 @@
                         <thead>
                             <th>Name</th>
                             <th>Email</th>
-                            {{-- <th>Password</th> --}}
                             <th>Address</th>
                             <th>Phone</th>
                             <th>Insured</th>
@@ -30,16 +29,16 @@
                             <tr data-id="{{ $patient->id }}">
                                 <td>{{ $patient->user->name }}</td>
                                 <td>{{ $patient->user->email }}</td>
-                                {{-- <td>{{ $patient->user->password }}</td> --}}
                                 <td>{{ $patient->user->address }}</td>
                                 <td>{{ $patient->user->phone }}</td>
                                 <td>{{ $patient->is_insured }}</td>
                                 <td>{{ $patient->insurance_policy_no }}</td>
-                                {{-- <td><a href="{{ route('admin.insurances.show', $insurance->id) }}">{{ $patient->insurance->name }}</a></td> --}}
                                 <td>{{ $patient->insurance->name }}</td>
                                 <td>
-                                    <a href="{{ route('admin.patients.show', $patient->id) }}" class="btn btn-default">View</a>
+                                    <a href="{{ route('admin.patients.show', $patient->id) }}" class="btn btn-outline-primary">View</a>
+                                    <br>
                                     <a href="{{ route('admin.patients.edit', $patient->id) }}" class="btn btn-warning">Edit</a>
+                                    <br>
                                     <form style="display:inline-block" method="POST" action="{{ route('admin.patients.destroy', $patient->id) }}">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">

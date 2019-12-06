@@ -17,7 +17,6 @@
                         <thead>
                             <th>Name</th>
                             <th>Email</th>
-                            {{-- <th>Password</th> --}}
                             <th>Address</th>
                             <th>Phone</th>
                             <th>Start Date</th>
@@ -28,12 +27,11 @@
                             <tr data-id="{{ $doctor->id }}">
                                 <td>{{ $doctor->user->name }}</td>
                                 <td>{{ $doctor->user->email }}</td>
-                                {{-- <td>{{ $doctor->user->password }}</td> --}}
                                 <td>{{ $doctor->user->address }}</td>
                                 <td>{{ $doctor->user->phone }}</td>
                                 <td>{{ $doctor->start_date }}</td>
                                 <td>
-                                    <a href="{{ route('admin.doctors.show', $doctor->id) }}" class="btn btn-default">View</a>
+                                    <a href="{{ route('admin.doctors.show', $doctor->id) }}" class="btn btn-outline-primary">View</a>
                                     <a href="{{ route('admin.doctors.edit', $doctor->id) }}" class="btn btn-warning">Edit</a>
                                     <form style="display:inline-block" method="POST" action="{{ route('admin.doctors.destroy', $doctor->id) }}">
                                         <input type="hidden" name="_method" value="DELETE">
