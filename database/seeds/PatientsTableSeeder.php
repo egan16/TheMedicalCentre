@@ -23,7 +23,7 @@ class PatientsTableSeeder extends Seeder
         $patient->is_insured = true;
         $patient->insurance_policy_no = '0987612345';
         $patient->user_id = $user->id;
-        $patient->insurance_id = $insurance->id; // how to seed two foreign keys?
+        $patient->insurance_id = $insurance->id;
 
         $patient->save();
       }

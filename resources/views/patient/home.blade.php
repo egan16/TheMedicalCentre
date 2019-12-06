@@ -20,7 +20,8 @@
                     <br>
                     Email: {{ Auth::user()->email }}
                     <br>
-                     {{-- <a href="{{ route('admin.books.index') }}">View Books </a> --}}
+                     <a href="{{ route('patient.visits.index') }}">View your visits </a>
+                     {{-- <a href="{{ route('patient.visits.index', $patient->id) }}">View your visits </a> --}}
                 </div>
             </div>
         </div>
