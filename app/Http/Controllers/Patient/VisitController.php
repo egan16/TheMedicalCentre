@@ -34,7 +34,7 @@ class VisitController extends Controller
       //   'visits' => $visits
       // ]);
 
-      $user = $user->Auth::user()->id;
+      // $user = $user->Auth::user()->id;
 
       $patients = Patient::all();
       $visits = Visit::all();
