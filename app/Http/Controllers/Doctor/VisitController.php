@@ -134,7 +134,6 @@ class VisitController extends Controller
 
       ]);
 
-      $visit = new Visit();
       $visit->date = $request->input('date');
       $visit->time = $request->input('time');
       $visit->duration = $request->input('duration');

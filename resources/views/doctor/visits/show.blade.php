@@ -38,7 +38,7 @@
                         </tbody>
                     </table>
                     <a href="{{ route('doctor.visits.index') }}" class="btn btn-default">Back</a>
-
+                    <a href="{{ route('doctor.visits.edit', $visit->id) }}" class="btn btn-warning">Edit</a>
                     <form style="display:inline-block" method="POST" action="{{ route('doctor.visits.destroy', $visit->id) }}">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
